@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: c2aa98b87d6a26c49ac650c5a9c522e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5022483865462914517
+    second: MessageInLight_0
+  - first:
+      213: -3453925515814994554
+    second: MessageInLight_1
+  - first:
+      213: -7127598477787614695
+    second: MessageInLight_2
+  - first:
+      213: 4139367290175721188
+    second: MessageInLight_3
+  - first:
+      213: -6905780077845697188
+    second: MessageInLight_4
+  - first:
+      213: -1539057588818933229
+    second: MessageInLight_5
+  - first:
+      213: -1698209827396485546
+    second: MessageInLight_6
+  - first:
+      213: 2071794278510971408
+    second: MessageInLight_7
+  - first:
+      213: -566377750412142959
+    second: MessageInLight_8
+  - first:
+      213: -7144803441437890996
+    second: MessageInLight_9
+  - first:
+      213: -2231106328673496331
+    second: MessageInLight_10
+  - first:
+      213: -5674034247790023818
+    second: MessageInLight_11
+  - first:
+      213: 6308088377834845033
+    second: MessageInLight_12
+  - first:
+      213: 6584105647221865770
+    second: MessageInLight_13
+  - first:
+      213: 3747620411599797690
+    second: MessageInLight_14
+  - first:
+      213: -7985311545491295753
+    second: MessageInLight_15
+  - first:
+      213: -5949386897138806459
+    second: MessageInLight_16
+  - first:
+      213: 1590073501183486899
+    second: MessageInLight_17
+  - first:
+      213: -3992279258887289439
+    second: MessageInLight_18
+  - first:
+      213: -2648982529302114411
+    second: MessageInLight_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MessageInLight_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 246
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dd3c03277273b540800000000000000
+      internalID: 5022483865462914517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 246
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68d70350b013110d0800000000000000
+      internalID: -3453925515814994554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_2
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 247
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 912bad5b2fea51d90800000000000000
+      internalID: -7127598477787614695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_3
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 246
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ee8bcd7e9cf17930800000000000000
+      internalID: 4139367290175721188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 246
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5da90b8b9db920a0800000000000000
+      internalID: -6905780077845697188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_5
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 247
+        width: 7
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a0499f64b24aae0800000000000000
+      internalID: -1539057588818933229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_6
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 246
+        width: 13
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65e74f3d82fbe68e0800000000000000
+      internalID: -1698209827396485546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_7
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 246
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01a45526bed70cc10800000000000000
+      internalID: 2071794278510971408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_8
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 247
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 196dff1df62d328f0800000000000000
+      internalID: -566377750412142959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_9
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 246
+        width: 13
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c462b13ff1f88dc90800000000000000
+      internalID: -7144803441437890996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 49
+        width: 649
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f25a4f6d948901e0800000000000000
+      internalID: -2231106328673496331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_11
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 7
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67b2319f9e7c141b0800000000000000
+      internalID: -5674034247790023818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_12
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 6
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 963bd9c35f4da8750800000000000000
+      internalID: 6308088377834845033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_13
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 6
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d7d4ab3317f5b50800000000000000
+      internalID: 6584105647221865770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_14
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 6
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abdb86a98e8320430800000000000000
+      internalID: 3747620411599797690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_15
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 6
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f17a2615797e2190800000000000000
+      internalID: -7985311545491295753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_16
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 26
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5419da463288f6da0800000000000000
+      internalID: -5949386897138806459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_17
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 6
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bbadccbc63111610800000000000000
+      internalID: 1590073501183486899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_18
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 6
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a50dd18a239898c0800000000000000
+      internalID: -3992279258887289439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInLight_19
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 11
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59f4bbcac6cec3bd0800000000000000
+      internalID: -2648982529302114411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MessageInLight_0: 5022483865462914517
+      MessageInLight_1: -3453925515814994554
+      MessageInLight_10: -2231106328673496331
+      MessageInLight_11: -5674034247790023818
+      MessageInLight_12: 6308088377834845033
+      MessageInLight_13: 6584105647221865770
+      MessageInLight_14: 3747620411599797690
+      MessageInLight_15: -7985311545491295753
+      MessageInLight_16: -5949386897138806459
+      MessageInLight_17: 1590073501183486899
+      MessageInLight_18: -3992279258887289439
+      MessageInLight_19: -2648982529302114411
+      MessageInLight_2: -7127598477787614695
+      MessageInLight_3: 4139367290175721188
+      MessageInLight_4: -6905780077845697188
+      MessageInLight_5: -1539057588818933229
+      MessageInLight_6: -1698209827396485546
+      MessageInLight_7: 2071794278510971408
+      MessageInLight_8: -566377750412142959
+      MessageInLight_9: -7144803441437890996
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

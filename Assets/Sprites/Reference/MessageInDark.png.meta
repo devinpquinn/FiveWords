@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 057c1cec1c3533841bc173fd4f8ef26e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1496704906315305655
+    second: MessageInDark_0
+  - first:
+      213: 4609935234139178015
+    second: MessageInDark_1
+  - first:
+      213: 1831818001655934278
+    second: MessageInDark_2
+  - first:
+      213: -4333791899439047893
+    second: MessageInDark_3
+  - first:
+      213: 686686891080076602
+    second: MessageInDark_4
+  - first:
+      213: 1825090041904747514
+    second: MessageInDark_5
+  - first:
+      213: 4572235653919899294
+    second: MessageInDark_6
+  - first:
+      213: 4500692957564558012
+    second: MessageInDark_7
+  - first:
+      213: -8154726027631883357
+    second: MessageInDark_8
+  - first:
+      213: 4457981184106554834
+    second: MessageInDark_9
+  - first:
+      213: -1204773081166005793
+    second: MessageInDark_10
+  - first:
+      213: 6585773791199793576
+    second: MessageInDark_11
+  - first:
+      213: 3354787170377420840
+    second: MessageInDark_12
+  - first:
+      213: -8429895016062077152
+    second: MessageInDark_13
+  - first:
+      213: -3180557489597948034
+    second: MessageInDark_14
+  - first:
+      213: -4131576029010954019
+    second: MessageInDark_15
+  - first:
+      213: 9084642873078147062
+    second: MessageInDark_16
+  - first:
+      213: 4193748421114180040
+    second: MessageInDark_17
+  - first:
+      213: -9059028914692283055
+    second: MessageInDark_18
+  - first:
+      213: -5959755053684677637
+    second: MessageInDark_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MessageInDark_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 246
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b21282be2d55c410800000000000000
+      internalID: 1496704906315305655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 246
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f144c64cba7c9ff30800000000000000
+      internalID: 4609935234139178015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_2
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 247
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64d2ed164cceb6910800000000000000
+      internalID: 1831818001655934278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_3
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 246
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2b58779a374bd3c0800000000000000
+      internalID: -4333791899439047893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 246
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3dceb6d61a978900800000000000000
+      internalID: 686686891080076602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_5
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 247
+        width: 7
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af3d5de29b5045910800000000000000
+      internalID: 1825090041904747514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_6
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 246
+        width: 13
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9e754d3a18d37f30800000000000000
+      internalID: 4572235653919899294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_7
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 246
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbadcb2366ca57e30800000000000000
+      internalID: 4500692957564558012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_8
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 247
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ab8e5a22e794de80800000000000000
+      internalID: -8154726027631883357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_9
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 246
+        width: 13
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d5eb0e744eeddd30800000000000000
+      internalID: 4457981184106554834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 49
+        width: 649
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd9b52e0449c74fe0800000000000000
+      internalID: -1204773081166005793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_11
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 7
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a19a83ce5e556b50800000000000000
+      internalID: 6585773791199793576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_12
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 6
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 820526338299e8e20800000000000000
+      internalID: 3354787170377420840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_13
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 6
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 027b8c9752ff20b80800000000000000
+      internalID: -8429895016062077152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_14
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 6
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f5ec480d36cd3d0800000000000000
+      internalID: -3180557489597948034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_15
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 6
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd8784cdd71b9a6c0800000000000000
+      internalID: -4131576029010954019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_16
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 26
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f76b118f82231e70800000000000000
+      internalID: 9084642873078147062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_17
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 6
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c1bdd538ff233a30800000000000000
+      internalID: 4193748421114180040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_18
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 6
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15526c9e23dd74280800000000000000
+      internalID: -9059028914692283055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MessageInDark_19
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 11
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf329c4da52ba4da0800000000000000
+      internalID: -5959755053684677637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MessageInDark_0: 1496704906315305655
+      MessageInDark_1: 4609935234139178015
+      MessageInDark_10: -1204773081166005793
+      MessageInDark_11: 6585773791199793576
+      MessageInDark_12: 3354787170377420840
+      MessageInDark_13: -8429895016062077152
+      MessageInDark_14: -3180557489597948034
+      MessageInDark_15: -4131576029010954019
+      MessageInDark_16: 9084642873078147062
+      MessageInDark_17: 4193748421114180040
+      MessageInDark_18: -9059028914692283055
+      MessageInDark_19: -5959755053684677637
+      MessageInDark_2: 1831818001655934278
+      MessageInDark_3: -4333791899439047893
+      MessageInDark_4: 686686891080076602
+      MessageInDark_5: 1825090041904747514
+      MessageInDark_6: 4572235653919899294
+      MessageInDark_7: 4500692957564558012
+      MessageInDark_8: -8154726027631883357
+      MessageInDark_9: 4457981184106554834
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
