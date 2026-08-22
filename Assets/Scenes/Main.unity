@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e602423b19b594aaebc0317d515c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WidthSetter
-  maxWidth: 935
+  maxWidth: 700
 --- !u!114 &804981042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e602423b19b594aaebc0317d515c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WidthSetter
-  maxWidth: 935
+  maxWidth: 700
 --- !u!114 &1777014828
 MonoBehaviour:
   m_ObjectHideFlags: 0
