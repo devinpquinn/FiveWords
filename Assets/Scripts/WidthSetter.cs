@@ -18,7 +18,7 @@ public class WidthSetter : MonoBehaviour
         text = GetComponent<TMP_Text>();
     }
 
-    void Update()
+    void LateUpdate()
     {
         // Measured unconstrained so the rect's own width doesn't feed back into the value.
         float preferredWidth = text.GetPreferredValues(Mathf.Infinity, Mathf.Infinity).x;

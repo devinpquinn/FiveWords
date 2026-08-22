@@ -13,7 +13,7 @@ public class HeightMatcher : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (target == null)
             return;
