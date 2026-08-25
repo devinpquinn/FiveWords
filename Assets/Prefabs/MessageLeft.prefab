@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 2922374001074926544}
   - component: {fileID: 703686360492001707}
   - component: {fileID: 7232955611539773281}
+  - component: {fileID: 8755923640016803662}
   m_Layer: 5
   m_Name: MessageLeft
   m_TagString: Untagged
@@ -208,6 +209,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HeightMatcher
   target: {fileID: 860223905032403733}
+--- !u!114 &8755923640016803662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123469746248208803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53ed22f5ec609246862422f3eaf93f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MessageHandler
+  messageText: {fileID: 722146537296680116}
+  bubbleImage: {fileID: 2414173527636447486}
+  oldBubbleSprite: {fileID: 21300000, guid: 6bca7ad65f84c6e47bd0cf2256639446, type: 3}
+  layoutGroup: {fileID: 6453123413334937020}
+  oldBottomPadding: 38
 --- !u!1 &6734712890336960398
 GameObject:
   m_ObjectHideFlags: 0
