@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 048e29ee6ed27314c8ea9ec15ae176ab
+guid: 3541eb73942919b45a2ba57f59dfbd7f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4585764100047711611
-    second: TypingBubble_1_0
-  - first:
-      213: -8630055048492803890
-    second: TypingBubble_1_1
+      213: -2413806693520163455
+    second: Circle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TypingBubble_1_0
+      name: Circle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 4
-        width: 27
-        height: 27
+        y: 0
+        width: 400
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 582dae0f8d71c50c0800000000000000
-      internalID: -4585764100047711611
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TypingBubble_1_1
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 17
-        width: 255
-        height: 147
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ec8158a48a2eb3880800000000000000
-      internalID: -8630055048492803890
+      spriteID: 18d3544e99f608ed0800000000000000
+      internalID: -2413806693520163455
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TypingBubble_1_0: -4585764100047711611
-      TypingBubble_1_1: -8630055048492803890
+      Circle_0: -2413806693520163455
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
