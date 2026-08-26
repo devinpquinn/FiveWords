@@ -1214,6 +1214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TypingIndicator
       objectReference: {fileID: 0}
+    - target: {fileID: 6238783317019421452, guid: 52ed87d895f4dc04f872cb8200b9d191, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
