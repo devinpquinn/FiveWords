@@ -466,7 +466,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 722146537296680116, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_text
-      value: We can fit this much.
+      value: We can fit this much
       objectReference: {fileID: 0}
     - target: {fileID: 860223905032403733, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_SizeDelta.x
@@ -570,7 +570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4983969874633564438, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 564.87
+      value: 549.82
       objectReference: {fileID: 0}
     - target: {fileID: 4983969874633564438, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_SizeDelta.y
@@ -586,7 +586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7232955611539773281, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -728,7 +728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7209061648367075001, guid: 7ff22bcc06abb584086c229c41a88e2e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -902,7 +902,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 722146537296680116, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_text
-      value: So text goes here and we'll see how much we can fit.
+      value: So text goes here and we'll see how much we can fit
       objectReference: {fileID: 0}
     - target: {fileID: 860223905032403733, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_SizeDelta.x
@@ -946,7 +946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2414018567911002797, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 287.21002
+      value: 214.41
       objectReference: {fileID: 0}
     - target: {fileID: 2414018567911002797, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1010,7 +1010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4983969874633564438, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 700
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 4983969874633564438, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1030,7 +1030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7232955611539773281, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
