@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 703686360492001707}
   - component: {fileID: 7232955611539773281}
   - component: {fileID: 8755923640016803662}
+  - component: {fileID: 3226258728012191737}
   m_Layer: 5
   m_Name: MessageLeft
   m_TagString: Untagged
@@ -226,6 +227,18 @@ MonoBehaviour:
   oldBubbleSprite: {fileID: 21300000, guid: 6bca7ad65f84c6e47bd0cf2256639446, type: 3}
   layoutGroup: {fileID: 6453123413334937020}
   oldBottomPadding: 38
+--- !u!225 &3226258728012191737
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123469746248208803}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6734712890336960398
 GameObject:
   m_ObjectHideFlags: 0
