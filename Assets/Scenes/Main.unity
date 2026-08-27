@@ -772,7 +772,9 @@ MonoBehaviour:
   messagePrefab: {fileID: 2123469746248208803, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
   messageContainer: {fileID: 177213572}
   typingIndicator: {fileID: 9134236825467824349}
-  typingDuration: 1
+  maxTypingDurationCharacters: 100
+  minTypingDuration: 1
+  maxTypingDuration: 5
 --- !u!4 &1350935009
 Transform:
   m_ObjectHideFlags: 0

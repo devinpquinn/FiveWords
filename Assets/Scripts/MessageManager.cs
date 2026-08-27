@@ -1,16 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MessageManager : MonoBehaviour
 {
     public GameObject messagePrefab;
     public Transform messageContainer;
     public GameObject typingIndicator;
-    public float typingDuration = 1f;
+    public int maxTypingDurationCharacters = 100;
+    public float minTypingDuration = 1f;
+    public float maxTypingDuration = 5f;
 
     private MessageHandler currentMessage;
     private string currentMessageText;
+    private readonly Queue<string> pendingMessages = new Queue<string>();
+    private Coroutine processRoutine;
 
     void Awake()
     {
@@ -22,7 +27,22 @@ public class MessageManager : MonoBehaviour
 
     public void AddMessage(string message)
     {
-        StartCoroutine(AddMessageRoutine(message));
+        pendingMessages.Enqueue(message);
+
+        if (processRoutine == null)
+        {
+            processRoutine = StartCoroutine(ProcessQueue());
+        }
+    }
+
+    private IEnumerator ProcessQueue()
+    {
+        while (pendingMessages.Count > 0)
+        {
+            yield return AddMessageRoutine(pendingMessages.Dequeue());
+        }
+
+        processRoutine = null;
     }
 
     private IEnumerator AddMessageRoutine(string message)
@@ -31,7 +51,7 @@ public class MessageManager : MonoBehaviour
         {
             typingIndicator.transform.SetAsLastSibling();
             typingIndicator.SetActive(true);
-            yield return new WaitForSeconds(typingDuration);
+            yield return new WaitForSeconds(GetTypingDuration(message));
             typingIndicator.SetActive(false);
         }
 
@@ -46,5 +66,12 @@ public class MessageManager : MonoBehaviour
 
         currentMessage = handler;
         currentMessageText = message;
+    }
+
+    private float GetTypingDuration(string message)
+    {
+        int characters = Mathf.Clamp(message.Length, 1, Mathf.Max(1, maxTypingDurationCharacters));
+        float t = maxTypingDurationCharacters > 1 ? (characters - 1f) / (maxTypingDurationCharacters - 1f) : 0f;
+        return Mathf.Lerp(minTypingDuration, maxTypingDuration, t);
     }
 }
