@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 1350935009}
   - component: {fileID: 1350935008}
   m_Layer: 0
-  m_Name: Other Message Manager
+  m_Name: Incoming Message Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -771,6 +771,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MessageManager
   messagePrefab: {fileID: 2123469746248208803, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
   messageContainer: {fileID: 177213572}
+  typingIndicator: {fileID: 9134236825467824349}
+  typingDuration: 1
 --- !u!4 &1350935009
 Transform:
   m_ObjectHideFlags: 0
@@ -1223,6 +1225,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52ed87d895f4dc04f872cb8200b9d191, type: 3}
+--- !u!1 &9134236825467824349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6238783317019421452, guid: 52ed87d895f4dc04f872cb8200b9d191, type: 3}
+  m_PrefabInstance: {fileID: 9134236825467824348}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
