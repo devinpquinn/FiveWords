@@ -7,6 +7,7 @@ public class MessageManager : MonoBehaviour
 {
     public GameObject messagePrefab;
     public Transform messageContainer;
+    
     public GameObject typingIndicator;
     public int maxTypingDurationCharacters = 100;
     public float minTypingDuration = 1f;
@@ -57,7 +58,7 @@ public class MessageManager : MonoBehaviour
 
         if (currentMessage != null)
         {
-            currentMessage.SetOld(currentMessageText);
+            currentMessage.SetOld();
         }
 
         GameObject instance = Instantiate(messagePrefab, messageContainer);
@@ -66,6 +67,14 @@ public class MessageManager : MonoBehaviour
 
         currentMessage = handler;
         currentMessageText = message;
+        
+        StartCoroutine(RefreshLayout());
+    }
+    
+    IEnumerator RefreshLayout()
+    {
+        yield return null; // Wait for the end of the frame
+        LayoutRebuilder.ForceRebuildLayoutImmediate(messageContainer.GetComponent<RectTransform>());
     }
 
     private float GetTypingDuration(string message)

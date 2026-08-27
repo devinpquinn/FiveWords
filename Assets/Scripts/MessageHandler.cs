@@ -17,9 +17,8 @@ public class MessageHandler : MonoBehaviour
         messageText.text = message;
     }
     
-    public void SetOld(string message)
+    public void SetOld()
     {
-        messageText.text = message;
         bubbleImage.sprite = oldBubbleSprite;
         layoutGroup.padding.bottom = oldBottomPadding;
     }
