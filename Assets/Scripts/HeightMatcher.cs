@@ -19,6 +19,9 @@ public class HeightMatcher : MonoBehaviour
             return;
 
         float targetHeight = target.rect.height;
+        if (targetHeight <= 0f)
+            return;
+
         if (Mathf.Approximately(rectTransform.rect.height, targetHeight))
             return;
 

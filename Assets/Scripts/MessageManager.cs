@@ -67,13 +67,9 @@ public class MessageManager : MonoBehaviour
 
         currentMessage = handler;
         currentMessageText = message;
-        
-        StartCoroutine(RefreshLayout());
-    }
-    
-    IEnumerator RefreshLayout()
-    {
-        yield return null; // Wait for the end of the frame
+
+        // Rebuild now so HeightMatcher doesn't read a zero height in this frame's LateUpdate.
+        LayoutRebuilder.ForceRebuildLayoutImmediate(instance.GetComponent<RectTransform>());
         LayoutRebuilder.ForceRebuildLayoutImmediate(messageContainer.GetComponent<RectTransform>());
     }
 
