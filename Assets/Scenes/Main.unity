@@ -216,7 +216,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MessageTester
   messageManager: {fileID: 1350935008}
   messages:
-  - Hello.
+  - Hello. Let's try a nice long message for our first test, one that should take
+    up multiple lines.
   - So this is a testing message.
   - And this is another, longer testing message.
   messageInterval: 2
@@ -774,7 +775,7 @@ MonoBehaviour:
   typingIndicator: {fileID: 9134236825467824349}
   maxTypingDurationCharacters: 100
   minTypingDuration: 1
-  maxTypingDuration: 5
+  maxTypingDuration: 1
   crossfadeDuration: 0.1
 --- !u!4 &1350935009
 Transform:
