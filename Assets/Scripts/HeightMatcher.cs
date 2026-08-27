@@ -15,8 +15,16 @@ public class HeightMatcher : MonoBehaviour
 
     void LateUpdate()
     {
+        Match();
+    }
+
+    public void Match()
+    {
         if (target == null)
             return;
+
+        if (rectTransform == null)
+            rectTransform = GetComponent<RectTransform>();
 
         float targetHeight = target.rect.height;
         if (targetHeight <= 0f)

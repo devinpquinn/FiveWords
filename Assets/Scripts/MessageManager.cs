@@ -94,9 +94,7 @@ public class MessageManager : MonoBehaviour
             typingIndicator.transform.SetAsLastSibling();
         }
 
-        // Rebuild now so HeightMatcher doesn't read a zero height in this frame's LateUpdate.
-        LayoutRebuilder.ForceRebuildLayoutImmediate(instance.GetComponent<RectTransform>());
-        LayoutRebuilder.ForceRebuildLayoutImmediate(messageContainer.GetComponent<RectTransform>());
+        ResolveLayout(instance);
 
         yield return CrossfadeRoutine(indicatorGroup, messageGroup);
 
@@ -112,6 +110,31 @@ public class MessageManager : MonoBehaviour
                 indicatorGroup.alpha = 1f;
             }
         }
+    }
+
+    // WidthSetter and HeightMatcher normally run in LateUpdate, which would leave the bubble at its
+    // prefab size for the spawn frame. Drive the same chain immediately instead.
+    private void ResolveLayout(GameObject instance)
+    {
+        foreach (WidthSetter widthSetter in instance.GetComponentsInChildren<WidthSetter>(true))
+        {
+            widthSetter.Apply();
+        }
+
+        // ForceRebuildLayoutImmediate skips the whole subtree when the rect it's given has no
+        // ILayoutController, and the message root has none, so rebuild from each controller instead.
+        ILayoutController[] controllers = instance.GetComponentsInChildren<ILayoutController>(true);
+        for (int i = controllers.Length - 1; i >= 0; i--)
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(((Component)controllers[i]).GetComponent<RectTransform>());
+        }
+
+        foreach (HeightMatcher matcher in instance.GetComponentsInChildren<HeightMatcher>(true))
+        {
+            matcher.Match();
+        }
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate(messageContainer.GetComponent<RectTransform>());
     }
 
     private IEnumerator CrossfadeRoutine(CanvasGroup fadeOut, CanvasGroup fadeIn)

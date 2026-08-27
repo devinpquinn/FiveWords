@@ -15,6 +15,8 @@ public class MessageHandler : MonoBehaviour
     public void SetMessage(string message)
     {
         messageText.text = message;
+        // TMP otherwise reports stale bounds until its next update, giving a wrong height for one frame.
+        messageText.ForceMeshUpdate();
     }
     
     public void SetOld()

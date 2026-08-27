@@ -20,6 +20,16 @@ public class WidthSetter : MonoBehaviour
 
     void LateUpdate()
     {
+        Apply();
+    }
+
+    public void Apply()
+    {
+        if (rectTransform == null)
+            rectTransform = GetComponent<RectTransform>();
+        if (text == null)
+            text = GetComponent<TMP_Text>();
+
         // Measured unconstrained so the rect's own width doesn't feed back into the value.
         float preferredWidth = text.GetPreferredValues(Mathf.Infinity, Mathf.Infinity).x;
         if (Mathf.Approximately(preferredWidth, lastPreferredWidth))
