@@ -26,6 +26,5 @@ public class HeightMatcher : MonoBehaviour
             return;
 
         rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, targetHeight);
-        Debug.Log($"HeightMatcher: Updated height to match target. New height: {targetHeight}");
     }
 }
