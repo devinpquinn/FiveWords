@@ -779,7 +779,7 @@ MonoBehaviour:
   crossfadeDuration: 0.1
   defaultMessageHeight: 164
   slideDuration: 0.2
-  slideEase: 9
+  slideEase: 21
   delayBetweenMessages: 1
 --- !u!4 &1350935009
 Transform:
