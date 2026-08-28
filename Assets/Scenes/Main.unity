@@ -780,7 +780,7 @@ MonoBehaviour:
   defaultMessageHeight: 164
   slideDuration: 0.2
   slideEase: 9
-  delayBetweenMessages: 0.5
+  delayBetweenMessages: 1
 --- !u!4 &1350935009
 Transform:
   m_ObjectHideFlags: 0
