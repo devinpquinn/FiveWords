@@ -14,6 +14,7 @@ public class MessageManager : MonoBehaviour
     public float minTypingDuration = 1f;
     public float maxTypingDuration = 5f;
     public float crossfadeDuration = 0.25f;
+    public float defaultMessageHeight = 164f;
     public float slideDuration = 0.1f;
     public Ease slideEase = Ease.OutCubic;
 
@@ -152,7 +153,7 @@ public class MessageManager : MonoBehaviour
         container.DOKill(true);
 
         float restingBottom = container.offsetMin.y;
-        container.offsetMin = new Vector2(container.offsetMin.x, restingBottom - (messageRect.rect.height - 164f));
+        container.offsetMin = new Vector2(container.offsetMin.x, restingBottom - (messageRect.rect.height - defaultMessageHeight));
 
         DOTween.To(
                 () => container.offsetMin.y,
