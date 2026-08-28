@@ -777,6 +777,7 @@ MonoBehaviour:
   minTypingDuration: 1
   maxTypingDuration: 1
   crossfadeDuration: 0.1
+  defaultMessageHeight: 164
   slideDuration: 0.2
   slideEase: 9
 --- !u!4 &1350935009
