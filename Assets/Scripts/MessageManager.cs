@@ -17,6 +17,7 @@ public class MessageManager : MonoBehaviour
     public float defaultMessageHeight = 164f;
     public float slideDuration = 0.1f;
     public Ease slideEase = Ease.OutCubic;
+    public float delayBetweenMessages = 0.5f;
 
     private MessageHandler currentMessage;
     private string currentMessageText;
@@ -46,6 +47,11 @@ public class MessageManager : MonoBehaviour
         while (pendingMessages.Count > 0)
         {
             yield return AddMessageRoutine(pendingMessages.Dequeue());
+
+            if (pendingMessages.Count > 0 && delayBetweenMessages > 0f)
+            {
+                yield return new WaitForSeconds(delayBetweenMessages);
+            }
         }
 
         processRoutine = null;
