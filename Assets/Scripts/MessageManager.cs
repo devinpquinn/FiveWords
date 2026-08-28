@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class MessageManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class MessageManager : MonoBehaviour
     public float minTypingDuration = 1f;
     public float maxTypingDuration = 5f;
     public float crossfadeDuration = 0.25f;
+    public float slideDuration = 0.1f;
+    public Ease slideEase = Ease.OutCubic;
 
     private MessageHandler currentMessage;
     private string currentMessageText;
@@ -95,6 +98,7 @@ public class MessageManager : MonoBehaviour
         }
 
         ResolveLayout(instance);
+        SlideIn(instance.GetComponent<RectTransform>());
 
         yield return CrossfadeRoutine(indicatorGroup, messageGroup);
 
@@ -135,6 +139,28 @@ public class MessageManager : MonoBehaviour
         }
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(messageContainer.GetComponent<RectTransform>());
+    }
+
+    // Drops the container's bottom margin by the new message's height and eases it back, so the
+    // stack appears to slide up into place.
+    private void SlideIn(RectTransform messageRect)
+    {
+        RectTransform container = messageContainer as RectTransform;
+        if (container == null || messageRect == null)
+            return;
+
+        container.DOKill(true);
+
+        float restingBottom = container.offsetMin.y;
+        container.offsetMin = new Vector2(container.offsetMin.x, restingBottom - (messageRect.rect.height - 164f));
+
+        DOTween.To(
+                () => container.offsetMin.y,
+                y => container.offsetMin = new Vector2(container.offsetMin.x, y),
+                restingBottom,
+                slideDuration)
+            .SetEase(slideEase)
+            .SetTarget(container);
     }
 
     private IEnumerator CrossfadeRoutine(CanvasGroup fadeOut, CanvasGroup fadeIn)
