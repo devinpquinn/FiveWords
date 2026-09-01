@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 8097260091375619600}
   - component: {fileID: 2020381177345900056}
   m_Layer: 5
-  m_Name: MessageRight
+  m_Name: MessageOutgoing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

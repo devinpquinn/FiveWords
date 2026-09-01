@@ -479,7 +479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2123469746248208803, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_Name
-      value: MessageLeft
+      value: MessageIncoming
       objectReference: {fileID: 0}
     - target: {fileID: 2414018567911002797, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_Pivot.x
@@ -717,7 +717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4030319071269790526, guid: 7ff22bcc06abb584086c229c41a88e2e, type: 3}
       propertyPath: m_Name
-      value: MessageRight
+      value: MessageOutgoing
       objectReference: {fileID: 0}
     - target: {fileID: 4389363783661218888, guid: 7ff22bcc06abb584086c229c41a88e2e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -920,7 +920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2123469746248208803, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_Name
-      value: MessageLeft
+      value: MessageIncoming
       objectReference: {fileID: 0}
     - target: {fileID: 2414018567911002797, guid: 9547202bf1e47dc4e9495a493b48b482, type: 3}
       propertyPath: m_Pivot.x
