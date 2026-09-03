@@ -7,6 +7,7 @@ using DG.Tweening;
 public class MessageManager : MonoBehaviour
 {
     public GameObject messagePrefab;
+    public GameObject outgoingMessagePrefab;
     public Transform messageContainer;
     
     public GameObject typingIndicator;
@@ -19,10 +20,16 @@ public class MessageManager : MonoBehaviour
     public Ease slideEase = Ease.OutCubic;
     public float delayBetweenMessages = 0.5f;
 
-    private MessageHandler currentMessage;
-    private string currentMessageText;
-    private readonly Queue<string> pendingMessages = new Queue<string>();
+    private MessageHandler currentIncomingMessage;
+    private MessageHandler currentOutgoingMessage;
+    private readonly Queue<PendingMessage> pendingMessages = new Queue<PendingMessage>();
     private Coroutine processRoutine;
+
+    private struct PendingMessage
+    {
+        public string text;
+        public bool outgoing;
+    }
 
     void Awake()
     {
@@ -34,7 +41,17 @@ public class MessageManager : MonoBehaviour
 
     public void AddMessage(string message)
     {
-        pendingMessages.Enqueue(message);
+        Enqueue(message, false);
+    }
+
+    public void AddOutgoingMessage(string message)
+    {
+        Enqueue(message, true);
+    }
+
+    private void Enqueue(string message, bool outgoing)
+    {
+        pendingMessages.Enqueue(new PendingMessage { text = message, outgoing = outgoing });
 
         if (processRoutine == null)
         {
@@ -46,7 +63,8 @@ public class MessageManager : MonoBehaviour
     {
         while (pendingMessages.Count > 0)
         {
-            yield return AddMessageRoutine(pendingMessages.Dequeue());
+            PendingMessage next = pendingMessages.Dequeue();
+            yield return AddMessageRoutine(next.text, next.outgoing);
 
             if (pendingMessages.Count > 0 && delayBetweenMessages > 0f)
             {
@@ -57,12 +75,13 @@ public class MessageManager : MonoBehaviour
         processRoutine = null;
     }
 
-    private IEnumerator AddMessageRoutine(string message)
+    private IEnumerator AddMessageRoutine(string message, bool outgoing)
     {
         CanvasGroup indicatorGroup = null;
         LayoutElement indicatorLayout = null;
+        bool useIndicator = !outgoing && typingIndicator != null;
 
-        if (typingIndicator != null)
+        if (useIndicator)
         {
             indicatorGroup = typingIndicator.GetComponent<CanvasGroup>();
             indicatorLayout = typingIndicator.GetComponent<LayoutElement>();
@@ -76,17 +95,25 @@ public class MessageManager : MonoBehaviour
             yield return new WaitForSeconds(GetTypingDuration(message));
         }
 
-        if (currentMessage != null)
+        // Each direction only ages its own previous bubble.
+        MessageHandler previous = outgoing ? currentOutgoingMessage : currentIncomingMessage;
+        if (previous != null)
         {
-            currentMessage.SetOld();
+            previous.SetOld();
         }
 
-        GameObject instance = Instantiate(messagePrefab, messageContainer);
+        GameObject instance = Instantiate(outgoing ? outgoingMessagePrefab : messagePrefab, messageContainer);
         MessageHandler handler = instance.GetComponent<MessageHandler>();
         handler.SetMessage(message);
 
-        currentMessage = handler;
-        currentMessageText = message;
+        if (outgoing)
+        {
+            currentOutgoingMessage = handler;
+        }
+        else
+        {
+            currentIncomingMessage = handler;
+        }
 
         CanvasGroup messageGroup = instance.GetComponent<CanvasGroup>();
         if (messageGroup != null)
@@ -94,7 +121,7 @@ public class MessageManager : MonoBehaviour
             messageGroup.alpha = 0f;
         }
 
-        if (typingIndicator != null)
+        if (useIndicator)
         {
             // Take the indicator out of the layout so the new message occupies its slot during the fade.
             if (indicatorLayout != null)
@@ -105,11 +132,11 @@ public class MessageManager : MonoBehaviour
         }
 
         ResolveLayout(instance);
-        SlideIn(instance.GetComponent<RectTransform>());
+        SlideIn(instance.GetComponent<RectTransform>(), outgoing ? 0f : defaultMessageHeight);
 
         yield return CrossfadeRoutine(indicatorGroup, messageGroup);
 
-        if (typingIndicator != null)
+        if (useIndicator)
         {
             typingIndicator.SetActive(false);
             if (indicatorLayout != null)
@@ -150,7 +177,7 @@ public class MessageManager : MonoBehaviour
 
     // Drops the container's bottom margin by the new message's height and eases it back, so the
     // stack appears to slide up into place.
-    private void SlideIn(RectTransform messageRect)
+    private void SlideIn(RectTransform messageRect, float defaultHeight)
     {
         RectTransform container = messageContainer as RectTransform;
         if (container == null || messageRect == null)
@@ -159,7 +186,7 @@ public class MessageManager : MonoBehaviour
         container.DOKill(true);
 
         float restingBottom = container.offsetMin.y;
-        container.offsetMin = new Vector2(container.offsetMin.x, restingBottom - (messageRect.rect.height - defaultMessageHeight));
+        container.offsetMin = new Vector2(container.offsetMin.x, restingBottom - (messageRect.rect.height - defaultHeight));
 
         DOTween.To(
                 () => container.offsetMin.y,
