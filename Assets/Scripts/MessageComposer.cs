@@ -76,6 +76,21 @@ public class MessageComposer : MonoBehaviour
             sendButton.interactable = false;
         }
 
+        if (draftLabel != null)
+        {
+            draftLabel.text = string.Empty;
+        }
+
+        if (placeholderText != null)
+        {
+            placeholderText.SetActive(true);
+        }
+
+        if (sendButtonImage != null && sendInactiveSprite != null)
+        {
+            sendButtonImage.sprite = sendInactiveSprite;
+        }
+
         messageManager.AddOutgoingMessage(current.MessageText);
 
         if (current.Response.Count == 0)
