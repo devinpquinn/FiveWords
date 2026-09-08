@@ -19,9 +19,6 @@ public class MessageNode : ScriptableObject
     [SerializeField] private MessageNode parent;
     [SerializeField] private MessageNode[] choices = new MessageNode[ChoiceCount];
 
-    [Tooltip("Appended to the message when it is sent from this node.")]
-    [SerializeField] private string endPunctuation = ".";
-
     [Tooltip("The incoming messages received after sending this message, one bubble per entry.")]
     [TextArea(1, 4)]
     [SerializeField] private string[] response = Array.Empty<string>();
@@ -51,8 +48,8 @@ public class MessageNode : ScriptableObject
 
     public bool IsComplete => Depth >= MaxWords;
 
-    /// <summary>Word as shown on a choice button.</summary>
-    public string DisplayWord => Capitalize(word);
+    /// <summary>Word as shown on a choice button; only the message's first word is capitalized.</summary>
+    public string DisplayWord => Depth == 1 ? Capitalize(word) : word;
 
     /// <summary>The message as composed so far, walking back up to the root.</summary>
     public string MessageText
@@ -77,8 +74,6 @@ public class MessageNode : ScriptableObject
             return builder.ToString();
         }
     }
-
-    public string SentText => MessageText + endPunctuation;
 
     /// <summary>Stable identifier such as "2-1-3", describing the choice indices taken from the root.</summary>
     public string PathId
@@ -110,10 +105,6 @@ public class MessageNode : ScriptableObject
 
     public void EditorSetWord(string value) => word = value;
 
-    public void EditorSetEndPunctuation(string value) => endPunctuation = value;
-
     public void EditorSetResponse(string[] value) => response = value ?? Array.Empty<string>();
-
-    public string EditorEndPunctuation => endPunctuation;
 #endif
 }

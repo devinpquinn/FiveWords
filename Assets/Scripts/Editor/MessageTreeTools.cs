@@ -94,7 +94,7 @@ public static class MessageTreeTools
             return;
 
         StringBuilder builder = new StringBuilder();
-        builder.AppendLine("path,depth,word,message,punctuation,response");
+        builder.AppendLine("path,depth,word,message,response");
         foreach (MessageNode node in Walk(root))
         {
             if (node.IsRoot)
@@ -106,7 +106,6 @@ public static class MessageTreeTools
                 node.Depth.ToString(),
                 Escape(node.Word),
                 Escape(node.MessageText),
-                Escape(node.EditorEndPunctuation),
                 Escape(string.Join(ResponseSeparator, node.Response))
             }));
         }
@@ -152,15 +151,11 @@ public static class MessageTreeTools
 
             Undo.RecordObject(node, "Import Message Tree");
             node.EditorSetWord(fields[2]);
-            if (fields.Count > 4 && !string.IsNullOrEmpty(fields[4]))
+            if (fields.Count > 4)
             {
-                node.EditorSetEndPunctuation(fields[4]);
-            }
-            if (fields.Count > 5)
-            {
-                node.EditorSetResponse(string.IsNullOrEmpty(fields[5])
+                node.EditorSetResponse(string.IsNullOrEmpty(fields[4])
                     ? new string[0]
-                    : fields[5].Split(new[] { ResponseSeparator }, System.StringSplitOptions.None));
+                    : fields[4].Split(new[] { ResponseSeparator }, System.StringSplitOptions.None));
             }
             EditorUtility.SetDirty(node);
             updated++;

@@ -76,7 +76,7 @@ public class MessageComposer : MonoBehaviour
             sendButton.interactable = false;
         }
 
-        messageManager.AddOutgoingMessage(current.SentText);
+        messageManager.AddOutgoingMessage(current.MessageText);
 
         if (current.Response.Count == 0)
         {

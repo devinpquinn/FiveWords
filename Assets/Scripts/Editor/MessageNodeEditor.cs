@@ -9,7 +9,7 @@ public class MessageNodeEditor : Editor
         MessageNode node = (MessageNode)target;
 
         EditorGUILayout.LabelField("Path", node.PathId);
-        EditorGUILayout.LabelField("Message so far", string.IsNullOrEmpty(node.SentText) ? "(empty)" : node.SentText);
+        EditorGUILayout.LabelField("Message so far", string.IsNullOrEmpty(node.MessageText) ? "(empty)" : node.MessageText);
         EditorGUILayout.Space();
 
         DrawDefaultInspector();
