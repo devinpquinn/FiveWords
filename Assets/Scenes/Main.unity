@@ -1493,6 +1493,10 @@ MonoBehaviour:
   - {fileID: 1853287031}
   sendButton: {fileID: 443019826}
   draftLabel: {fileID: 1741929883}
+  placeholderText: {fileID: 818156876}
+  sendButtonImage: {fileID: 443019824}
+  sendInactiveSprite: {fileID: 21300000, guid: 2e7e39bfbba0c4a4e84fe133e43a36b0, type: 3}
+  sendActiveSprite: {fileID: 21300000, guid: 3d032d5a0ba355547804a7b19b6da4b5, type: 3}
   autoSendAtMaxWords: 1
 --- !u!1 &1592361805
 GameObject:

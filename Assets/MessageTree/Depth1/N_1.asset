@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: this
   parent: {fileID: 11400000, guid: d3c5fe258075a28488e09078a186ada3, type: 2}
   choices:
   - {fileID: 11400000, guid: 4da163a2b551b5c43a09878bcbc18a66, type: 2}
