@@ -10,7 +10,7 @@ public class MessageTester : MonoBehaviour
     
     void Start()
     {
-        StartCoroutine(AddMessages());
+        //StartCoroutine(AddMessages());
     }
     
     IEnumerator AddMessages()
