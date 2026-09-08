@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
+  m_Name: N_3-2-1-1
+  m_EditorClassIdentifier: Assembly-CSharp::MessageNode
+  word: 
+  parent: {fileID: 11400000, guid: 2d0b31d6a96ea78469dc3151dc2200cf, type: 2}
+  choices:
+  - {fileID: 11400000, guid: 67c884e47d75640439d3feadb0935eaf, type: 2}
+  - {fileID: 11400000, guid: 0720a93beb1d2354d8c12b35ac1d2513, type: 2}
+  - {fileID: 11400000, guid: 50c3e6ba3159fe843a207869e92af6f2, type: 2}
+  endPunctuation: .
+  response: []

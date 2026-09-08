@@ -1486,7 +1486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MessageComposer
   messageManager: {fileID: 1350935008}
-  rootNode: {fileID: 0}
+  rootNode: {fileID: 11400000, guid: d3c5fe258075a28488e09078a186ada3, type: 2}
   choiceButtons:
   - {fileID: 1706309281}
   - {fileID: 723496606}
