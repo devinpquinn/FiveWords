@@ -70,7 +70,7 @@ public class MessageComposer : MonoBehaviour
             return;
 
         sent = true;
-        SetChoicesInteractable(false);
+        HideChoices();
         if (sendButton != null)
         {
             sendButton.interactable = false;
@@ -154,13 +154,13 @@ public class MessageComposer : MonoBehaviour
         }
     }
 
-    private void SetChoicesInteractable(bool value)
+    private void HideChoices()
     {
         foreach (Button button in choiceButtons)
         {
             if (button != null)
             {
-                button.interactable = value;
+                button.gameObject.SetActive(false);
             }
         }
     }
