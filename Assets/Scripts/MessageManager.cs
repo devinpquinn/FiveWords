@@ -20,10 +20,17 @@ public class MessageManager : MonoBehaviour
     public Ease slideEase = Ease.OutCubic;
     public float delayBetweenMessages = 0.5f;
 
+    public RectTransform inputAreaBackground;
+    public RectTransform draftLabelBackground;
+    public float collapseDuration = 0.35f;
+    public Ease collapseEase = Ease.InOutCubic;
+
     private MessageHandler currentIncomingMessage;
     private MessageHandler currentOutgoingMessage;
     private readonly Queue<PendingMessage> pendingMessages = new Queue<PendingMessage>();
     private Coroutine processRoutine;
+    private Tween containerSlideTween;
+    private bool inputCollapsed;
 
     private struct PendingMessage
     {
@@ -65,6 +72,16 @@ public class MessageManager : MonoBehaviour
         {
             PendingMessage next = pendingMessages.Dequeue();
             yield return AddMessageRoutine(next.text, next.outgoing);
+
+            if (next.outgoing && !inputCollapsed)
+            {
+                while (containerSlideTween != null && containerSlideTween.IsActive() && !containerSlideTween.IsComplete())
+                {
+                    yield return null;
+                }
+
+                yield return CollapseInputAreaRoutine();
+            }
 
             if (pendingMessages.Count > 0 && delayBetweenMessages > 0f)
             {
@@ -188,13 +205,52 @@ public class MessageManager : MonoBehaviour
         float restingBottom = container.offsetMin.y;
         container.offsetMin = new Vector2(container.offsetMin.x, restingBottom - (messageRect.rect.height - defaultHeight));
 
-        DOTween.To(
+        containerSlideTween = DOTween.To(
                 () => container.offsetMin.y,
                 y => container.offsetMin = new Vector2(container.offsetMin.x, y),
                 restingBottom,
                 slideDuration)
             .SetEase(slideEase)
             .SetTarget(container);
+    }
+
+    // Runs once, after the sent message has settled: the composer folds away and the thread
+    // reclaims the space before any reply is shown.
+    private IEnumerator CollapseInputAreaRoutine()
+    {
+        inputCollapsed = true;
+        containerSlideTween = null;
+
+        Sequence collapse = DOTween.Sequence();
+
+        if (inputAreaBackground != null)
+        {
+            collapse.Join(inputAreaBackground
+                .DOSizeDelta(new Vector2(inputAreaBackground.sizeDelta.x, 0f), collapseDuration)
+                .SetEase(collapseEase));
+        }
+
+        RectTransform container = messageContainer as RectTransform;
+        if (container != null)
+        {
+            float targetBottom = draftLabelBackground != null ? draftLabelBackground.rect.height : 0f;
+            collapse.Join(DOTween.To(
+                    () => container.offsetMin.y,
+                    y => container.offsetMin = new Vector2(container.offsetMin.x, y),
+                    targetBottom,
+                    collapseDuration)
+                .SetEase(collapseEase)
+                .SetTarget(container));
+        }
+
+        if (draftLabelBackground != null)
+        {
+            collapse.Join(draftLabelBackground
+                .DOAnchorPosY(0f, collapseDuration)
+                .SetEase(collapseEase));
+        }
+
+        yield return collapse.WaitForCompletion();
     }
 
     private IEnumerator CrossfadeRoutine(CanvasGroup fadeOut, CanvasGroup fadeIn)
