@@ -28,7 +28,8 @@ public class MessageManager : MonoBehaviour
     public float expandDuration = 0.35f;
     public Ease collapseEase = Ease.InOutCubic;
     public float delayBeforeCollapse = 0.5f;
-    public float delayBeforeExpand = 0.5f;
+    [Tooltip("Multiplier on the typing duration the last received message would have used.")]
+    public float expandDelayTypingMultiplier = 1f;
     public float expandAmount = 164f;
 
     private MessageHandler currentIncomingMessage;
@@ -38,6 +39,7 @@ public class MessageManager : MonoBehaviour
     private Tween containerSlideTween;
     private bool inputCollapsed;
     private bool inputExpanded;
+    private string lastIncomingText;
 
     private struct PendingMessage
     {
@@ -113,9 +115,12 @@ public class MessageManager : MonoBehaviour
         {
             yield return WaitForSlideToSettle();
 
-            if (delayBeforeExpand > 0f)
+            float expandDelay = lastIncomingText != null
+                ? GetTypingDuration(lastIncomingText) * expandDelayTypingMultiplier
+                : 0f;
+            if (expandDelay > 0f)
             {
-                yield return new WaitForSeconds(delayBeforeExpand);
+                yield return new WaitForSeconds(expandDelay);
             }
 
             yield return ExpandInputAreaRoutine();
@@ -172,6 +177,7 @@ public class MessageManager : MonoBehaviour
         else
         {
             currentIncomingMessage = handler;
+            lastIncomingText = message;
         }
 
         CanvasGroup messageGroup = instance.GetComponent<CanvasGroup>();

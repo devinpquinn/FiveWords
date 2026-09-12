@@ -1599,10 +1599,10 @@ MonoBehaviour:
   draftLabelBackground: {fileID: 223723393}
   restartButton: {fileID: 1716256785}
   collapseDuration: 0.9
-  expandDuration: 0.35
+  expandDuration: 0.3
   collapseEase: 16
   delayBeforeCollapse: 0
-  delayBeforeExpand: 1
+  expandDelayTypingMultiplier: 0.5
   expandAmount: 187
 --- !u!4 &1350935009
 Transform:
