@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,8 +23,13 @@ public class MessageManager : MonoBehaviour
 
     public RectTransform inputAreaBackground;
     public RectTransform draftLabelBackground;
+    public Button restartButton;
     public float collapseDuration = 0.35f;
+    public float expandDuration = 0.35f;
     public Ease collapseEase = Ease.InOutCubic;
+    public float delayBeforeCollapse = 0.5f;
+    public float delayBeforeExpand = 0.5f;
+    public float expandAmount = 164f;
 
     private MessageHandler currentIncomingMessage;
     private MessageHandler currentOutgoingMessage;
@@ -31,6 +37,7 @@ public class MessageManager : MonoBehaviour
     private Coroutine processRoutine;
     private Tween containerSlideTween;
     private bool inputCollapsed;
+    private bool inputExpanded;
 
     private struct PendingMessage
     {
@@ -44,6 +51,17 @@ public class MessageManager : MonoBehaviour
         {
             typingIndicator.SetActive(false);
         }
+
+        if (restartButton != null)
+        {
+            restartButton.gameObject.SetActive(false);
+            restartButton.onClick.AddListener(RestartScene);
+        }
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void AddMessage(string message)
@@ -75,9 +93,11 @@ public class MessageManager : MonoBehaviour
 
             if (next.outgoing && !inputCollapsed)
             {
-                while (containerSlideTween != null && containerSlideTween.IsActive() && !containerSlideTween.IsComplete())
+                yield return WaitForSlideToSettle();
+
+                if (delayBeforeCollapse > 0f)
                 {
-                    yield return null;
+                    yield return new WaitForSeconds(delayBeforeCollapse);
                 }
 
                 yield return CollapseInputAreaRoutine();
@@ -89,7 +109,29 @@ public class MessageManager : MonoBehaviour
             }
         }
 
+        if (inputCollapsed && !inputExpanded)
+        {
+            yield return WaitForSlideToSettle();
+
+            if (delayBeforeExpand > 0f)
+            {
+                yield return new WaitForSeconds(delayBeforeExpand);
+            }
+
+            yield return ExpandInputAreaRoutine();
+        }
+
         processRoutine = null;
+    }
+
+    private IEnumerator WaitForSlideToSettle()
+    {
+        while (containerSlideTween != null && containerSlideTween.IsActive() && !containerSlideTween.IsComplete())
+        {
+            yield return null;
+        }
+
+        containerSlideTween = null;
     }
 
     private IEnumerator AddMessageRoutine(string message, bool outgoing)
@@ -219,38 +261,55 @@ public class MessageManager : MonoBehaviour
     private IEnumerator CollapseInputAreaRoutine()
     {
         inputCollapsed = true;
+        yield return ResizeInputAreaRoutine(0f, collapseDuration);
+    }
+
+    // Mirror of the collapse, reopening just enough room for the restart button.
+    private IEnumerator ExpandInputAreaRoutine()
+    {
+        inputExpanded = true;
+        yield return ResizeInputAreaRoutine(expandAmount, expandDuration);
+
+        if (restartButton != null)
+        {
+            restartButton.gameObject.SetActive(true);
+        }
+    }
+
+    private IEnumerator ResizeInputAreaRoutine(float amount, float duration)
+    {
         containerSlideTween = null;
 
-        Sequence collapse = DOTween.Sequence();
+        Sequence resize = DOTween.Sequence();
 
         if (inputAreaBackground != null)
         {
-            collapse.Join(inputAreaBackground
-                .DOSizeDelta(new Vector2(inputAreaBackground.sizeDelta.x, 0f), collapseDuration)
+            resize.Join(inputAreaBackground
+                .DOSizeDelta(new Vector2(inputAreaBackground.sizeDelta.x, amount), duration)
                 .SetEase(collapseEase));
         }
 
         RectTransform container = messageContainer as RectTransform;
         if (container != null)
         {
-            float targetBottom = draftLabelBackground != null ? draftLabelBackground.rect.height : 0f;
-            collapse.Join(DOTween.To(
+            float targetBottom = (draftLabelBackground != null ? draftLabelBackground.rect.height : 0f) + amount;
+            resize.Join(DOTween.To(
                     () => container.offsetMin.y,
                     y => container.offsetMin = new Vector2(container.offsetMin.x, y),
                     targetBottom,
-                    collapseDuration)
+                    duration)
                 .SetEase(collapseEase)
                 .SetTarget(container));
         }
 
         if (draftLabelBackground != null)
         {
-            collapse.Join(draftLabelBackground
-                .DOAnchorPosY(0f, collapseDuration)
+            resize.Join(draftLabelBackground
+                .DOAnchorPosY(amount, duration)
                 .SetEase(collapseEase));
         }
 
-        yield return collapse.WaitForCompletion();
+        yield return resize.WaitForCompletion();
     }
 
     private IEnumerator CrossfadeRoutine(CanvasGroup fadeOut, CanvasGroup fadeIn)
