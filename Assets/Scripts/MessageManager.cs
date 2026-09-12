@@ -274,12 +274,8 @@ public class MessageManager : MonoBehaviour
     private IEnumerator ExpandInputAreaRoutine()
     {
         inputExpanded = true;
+        restartButton.gameObject.SetActive(true);
         yield return ResizeInputAreaRoutine(expandAmount, expandDuration);
-
-        if (restartButton != null)
-        {
-            restartButton.gameObject.SetActive(true);
-        }
     }
 
     private IEnumerator ResizeInputAreaRoutine(float amount, float duration)
