@@ -1460,8 +1460,8 @@ MonoBehaviour:
   delayBetweenMessages: 1
   inputAreaBackground: {fileID: 2040553481}
   draftLabelBackground: {fileID: 223723393}
-  collapseDuration: 0.35
-  collapseEase: 22
+  collapseDuration: 0.9
+  collapseEase: 16
 --- !u!4 &1350935009
 Transform:
   m_ObjectHideFlags: 0
