@@ -160,7 +160,12 @@ public class MessageComposer : MonoBehaviour
         {
             if (button != null)
             {
-                button.gameObject.SetActive(false);
+                button.interactable = false;
+                TextMeshProUGUI label = button.GetComponentInChildren<TextMeshProUGUI>(true);
+                if (label != null)
+                {
+                    label.text = "...";
+                }
             }
         }
     }
