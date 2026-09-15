@@ -3,10 +3,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using DG.Tweening;
 
 public class MessageManager : MonoBehaviour
 {
+    public event Action InputAreaCollapsed;
+
     public GameObject messagePrefab;
     public GameObject outgoingMessagePrefab;
     public Transform messageContainer;
@@ -268,6 +271,7 @@ public class MessageManager : MonoBehaviour
     {
         inputCollapsed = true;
         yield return ResizeInputAreaRoutine(0f, collapseDuration);
+        InputAreaCollapsed?.Invoke();
     }
 
     // Mirror of the collapse, reopening just enough room for the restart button.

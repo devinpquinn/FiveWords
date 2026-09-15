@@ -21,6 +21,22 @@ public class MessageComposer : MonoBehaviour
     private MessageNode current;
     private bool sent;
 
+    void OnEnable()
+    {
+        if (messageManager != null)
+        {
+            messageManager.InputAreaCollapsed += DisableChoiceButtonObjects;
+        }
+    }
+
+    void OnDisable()
+    {
+        if (messageManager != null)
+        {
+            messageManager.InputAreaCollapsed -= DisableChoiceButtonObjects;
+        }
+    }
+
     void Start()
     {
         for (int i = 0; i < choiceButtons.Length; i++)
@@ -166,6 +182,17 @@ public class MessageComposer : MonoBehaviour
                 {
                     label.text = "...";
                 }
+            }
+        }
+    }
+
+    private void DisableChoiceButtonObjects()
+    {
+        foreach (Button button in choiceButtons)
+        {
+            if (button != null)
+            {
+                button.gameObject.SetActive(false);
             }
         }
     }
