@@ -1722,8 +1722,8 @@ MonoBehaviour:
   draftLabelBackground: {fileID: 223723393}
   restartButton: {fileID: 593879174}
   fadeScreen: {fileID: 2128949218}
-  startFadeDuration: 0.5
-  restartFadeDuration: 0.5
+  startFadeDuration: 0.1
+  restartFadeDuration: 0.1
   fadeEase: 10
   collapseDuration: 1
   expandDuration: 1
