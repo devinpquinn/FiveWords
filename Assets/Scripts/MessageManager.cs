@@ -27,6 +27,10 @@ public class MessageManager : MonoBehaviour
     public RectTransform inputAreaBackground;
     public RectTransform draftLabelBackground;
     public Button restartButton;
+    public CanvasGroup fadeScreen;
+    public float startFadeDuration = 0.5f;
+    public float restartFadeDuration = 0.35f;
+    public Ease fadeEase = Ease.InOutCubic;
     public float collapseDuration = 0.35f;
     public float expandDuration = 0.35f;
     public Ease collapseEase = Ease.InOutCubic;
@@ -42,6 +46,7 @@ public class MessageManager : MonoBehaviour
     private Tween containerSlideTween;
     private bool inputCollapsed;
     private bool inputExpanded;
+    private bool restarting;
     private string lastIncomingText;
 
     private struct PendingMessage
@@ -52,6 +57,13 @@ public class MessageManager : MonoBehaviour
 
     void Awake()
     {
+        if (fadeScreen != null)
+        {
+            fadeScreen.alpha = 1f;
+            fadeScreen.blocksRaycasts = true;
+            fadeScreen.interactable = true;
+        }
+
         if (typingIndicator != null)
         {
             typingIndicator.SetActive(false);
@@ -64,9 +76,83 @@ public class MessageManager : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        if (fadeScreen != null)
+        {
+            StartCoroutine(FadeInOnStartRoutine());
+        }
+    }
+
     public void RestartScene()
     {
+        if (restarting)
+        {
+            return;
+        }
+
+        StartCoroutine(RestartSceneRoutine());
+    }
+
+    private IEnumerator RestartSceneRoutine()
+    {
+        restarting = true;
+
+        if (restartButton != null)
+        {
+            restartButton.interactable = false;
+        }
+
+        yield return FadeOutBeforeRestartRoutine();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private IEnumerator FadeInOnStartRoutine()
+    {
+        fadeScreen.gameObject.SetActive(true);
+        fadeScreen.alpha = 1f;
+        fadeScreen.blocksRaycasts = true;
+        fadeScreen.interactable = true;
+
+        if (startFadeDuration <= 0f)
+        {
+            fadeScreen.alpha = 0f;
+        }
+        else
+        {
+            Tween fadeTween = fadeScreen
+                .DOFade(0f, startFadeDuration)
+                .SetEase(fadeEase)
+                .SetTarget(fadeScreen);
+            yield return fadeTween.WaitForCompletion();
+        }
+
+        fadeScreen.blocksRaycasts = false;
+        fadeScreen.interactable = false;
+    }
+
+    private IEnumerator FadeOutBeforeRestartRoutine()
+    {
+        if (fadeScreen == null)
+        {
+            yield break;
+        }
+
+        fadeScreen.gameObject.SetActive(true);
+        fadeScreen.blocksRaycasts = true;
+        fadeScreen.interactable = true;
+
+        if (restartFadeDuration <= 0f)
+        {
+            fadeScreen.alpha = 1f;
+            yield break;
+        }
+
+        Tween fadeTween = fadeScreen
+            .DOFade(1f, restartFadeDuration)
+            .SetEase(fadeEase)
+            .SetTarget(fadeScreen);
+        yield return fadeTween.WaitForCompletion();
     }
 
     public void AddMessage(string message)
