@@ -286,6 +286,8 @@ public class MessageManager : MonoBehaviour
         }
 
         ResolveLayout(instance);
+        string bubbleSound = outgoing ? "MessageOutgoing" : "MessageIncoming";
+        SoundManager.PlaySound(bubbleSound);
         SlideIn(instance.GetComponent<RectTransform>(), outgoing ? 0f : defaultMessageHeight);
 
         yield return CrossfadeRoutine(indicatorGroup, messageGroup);
