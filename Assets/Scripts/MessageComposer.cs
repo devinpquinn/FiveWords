@@ -59,6 +59,8 @@ public class MessageComposer : MonoBehaviour
         if (sent || current == null)
             return;
 
+        SoundManager.PlaySound("TypingLight", 0.35f);
+
         MessageNode next = current.GetChoice(index);
         if (next == null)
         {
