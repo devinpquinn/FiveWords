@@ -29,7 +29,8 @@ public class MessageManager : MonoBehaviour
     public Button restartButton;
     public CanvasGroup fadeScreen;
     public float startFadeDuration = 0.5f;
-    public float restartFadeDuration = 0.35f;
+    public float restartFadeDuration = 0.5f;
+    public float restartFadeHoldDuration = 1f;
     public Ease fadeEase = Ease.InOutCubic;
     public float collapseDuration = 0.35f;
     public float expandDuration = 0.35f;
@@ -91,6 +92,8 @@ public class MessageManager : MonoBehaviour
             return;
         }
 
+        SoundManager.PlaySound("PhoneShutdown", 0.5f);
+
         StartCoroutine(RestartSceneRoutine());
     }
 
@@ -104,6 +107,9 @@ public class MessageManager : MonoBehaviour
         }
 
         yield return FadeOutBeforeRestartRoutine();
+        
+        yield return new WaitForSeconds(restartFadeHoldDuration);
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -153,6 +159,8 @@ public class MessageManager : MonoBehaviour
             .SetEase(fadeEase)
             .SetTarget(fadeScreen);
         yield return fadeTween.WaitForCompletion();
+        
+        fadeScreen.alpha = 1f;
     }
 
     public void AddMessage(string message)
