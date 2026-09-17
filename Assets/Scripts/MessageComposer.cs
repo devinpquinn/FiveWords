@@ -11,9 +11,6 @@ public class MessageComposer : MonoBehaviour
     public TextMeshProUGUI draftLabel;
 
     public GameObject placeholderText;
-    public Image sendButtonImage;
-    public Sprite sendInactiveSprite;
-    public Sprite sendActiveSprite;
 
     [Tooltip("Send automatically once the fifth word is chosen.")]
     public bool autoSendAtMaxWords = true;
@@ -102,10 +99,7 @@ public class MessageComposer : MonoBehaviour
             placeholderText.SetActive(true);
         }
 
-        if (sendButtonImage != null && sendInactiveSprite != null)
-        {
-            sendButtonImage.sprite = sendInactiveSprite;
-        }
+        sendButton.interactable = false;
 
         messageManager.AddOutgoingMessage(current.MessageText);
 
@@ -139,14 +133,14 @@ public class MessageComposer : MonoBehaviour
         {
             sendButton.interactable = canSend;
         }
-
-        if (sendButtonImage != null)
+        
+        if(canSend)
         {
-            Sprite sprite = canSend ? sendActiveSprite : sendInactiveSprite;
-            if (sprite != null)
-            {
-                sendButtonImage.sprite = sprite;
-            }
+            sendButton.interactable = true;
+        }
+        else
+        {
+            sendButton.interactable = false;
         }
 
         for (int i = 0; i < choiceButtons.Length; i++)
