@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour
         PlaySound(soundName, -1f, -1f);
     }
 
-    public static void PlaySound(string soundName, float customPitch, float customVolume = -1f)
+    public static void PlaySound(string soundName, float customVolume = -1f, float customPitch = -1f)
     {
         // Load the audio clip from Resources/Sounds
         AudioClip clip = Resources.Load<AudioClip>("Sounds/" + soundName);
