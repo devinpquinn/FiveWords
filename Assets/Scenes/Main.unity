@@ -2091,7 +2091,7 @@ MonoBehaviour:
   restartFadeDuration: 0.1
   restartFadeHoldDuration: 1
   fadeEase: 10
-  collapseDuration: 1
+  collapseDuration: 0.5
   expandDuration: 1
   collapseEase: 16
   delayBeforeCollapse: 0
