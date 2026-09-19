@@ -107,10 +107,23 @@ public class MessageManager : MonoBehaviour
         }
 
         yield return FadeOutBeforeRestartRoutine();
-        
-        yield return new WaitForSeconds(restartFadeHoldDuration);
-        
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        if (loadOperation == null)
+        {
+            yield break;
+        }
+
+        // Begin loading immediately, then hold on the fade before scene activation.
+        loadOperation.allowSceneActivation = false;
+
+        if (restartFadeHoldDuration > 0f)
+        {
+            yield return new WaitForSeconds(restartFadeHoldDuration);
+        }
+
+        loadOperation.allowSceneActivation = true;
+        yield return loadOperation;
     }
 
     private IEnumerator FadeInOnStartRoutine()
