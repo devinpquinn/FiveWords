@@ -544,6 +544,7 @@ GameObject:
   - component: {fileID: 475532567}
   - component: {fileID: 475532569}
   - component: {fileID: 475532568}
+  - component: {fileID: 475532570}
   m_Layer: 5
   m_Name: OptionText
   m_TagString: Untagged
@@ -670,6 +671,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475532566}
   m_CullTransparentMesh: 1
+--- !u!225 &475532570
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475532566}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &478656825
 GameObject:
   m_ObjectHideFlags: 0
@@ -3308,6 +3321,7 @@ GameObject:
   - component: {fileID: 1937552615}
   - component: {fileID: 1937552617}
   - component: {fileID: 1937552616}
+  - component: {fileID: 1937552618}
   m_Layer: 5
   m_Name: OptionText
   m_TagString: Untagged
@@ -3434,6 +3448,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937552614}
   m_CullTransparentMesh: 1
+--- !u!225 &1937552618
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937552614}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1986215197
 GameObject:
   m_ObjectHideFlags: 0
@@ -3837,6 +3863,7 @@ GameObject:
   - component: {fileID: 2141555608}
   - component: {fileID: 2141555610}
   - component: {fileID: 2141555609}
+  - component: {fileID: 2141555611}
   m_Layer: 5
   m_Name: OptionText
   m_TagString: Untagged
@@ -3963,6 +3990,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141555607}
   m_CullTransparentMesh: 1
+--- !u!225 &2141555611
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141555607}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!224 &2414018567723512528 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3831321292168315867, guid: 52ed87d895f4dc04f872cb8200b9d191, type: 3}

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class MessageComposer : MonoBehaviour
 {
@@ -15,8 +16,17 @@ public class MessageComposer : MonoBehaviour
     [Tooltip("Send automatically once the fifth word is chosen.")]
     public bool autoSendAtMaxWords = true;
 
+    [Tooltip("Duration for fading out all choice button labels before text updates.")]
+    public float choiceTextFadeOutDuration = 0.08f;
+
+    [Tooltip("Duration for fading in all choice button labels after text updates.")]
+    public float choiceTextFadeInDuration = 0.12f;
+
     private MessageNode current;
     private bool sent;
+    private bool choiceTransitionInProgress;
+    private TextMeshProUGUI[] choiceLabels;
+    private CanvasGroup[] choiceLabelGroups;
 
     void OnEnable()
     {
@@ -36,12 +46,20 @@ public class MessageComposer : MonoBehaviour
 
     void Start()
     {
+        choiceLabels = new TextMeshProUGUI[choiceButtons.Length];
+        choiceLabelGroups = new CanvasGroup[choiceButtons.Length];
+
         for (int i = 0; i < choiceButtons.Length; i++)
         {
             int index = i;
             if (choiceButtons[i] != null)
             {
                 choiceButtons[i].onClick.AddListener(() => Choose(index));
+                choiceLabels[i] = choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>(true);
+                if (choiceLabels[i] != null)
+                {
+                    choiceLabelGroups[i] = choiceLabels[i].GetComponent<CanvasGroup>();
+                }
             }
         }
 
@@ -56,10 +74,8 @@ public class MessageComposer : MonoBehaviour
 
     public void Choose(int index)
     {
-        if (sent || current == null)
+        if (sent || current == null || choiceTransitionInProgress)
             return;
-
-        SoundManager.PlaySound("TypingLight", 0.35f);
 
         MessageNode next = current.GetChoice(index);
         if (next == null)
@@ -68,15 +84,85 @@ public class MessageComposer : MonoBehaviour
             return;
         }
 
+        SoundManager.PlaySound("TypingLight", 0.35f);
+
+        StartCoroutine(ChooseWithCrossfadeRoutine(next));
+    }
+
+    private IEnumerator ChooseWithCrossfadeRoutine(MessageNode next)
+    {
+        choiceTransitionInProgress = true;
+        SetChoiceButtonsInteractable(false);
+
+        yield return FadeChoiceLabelGroups(1f, 0f, choiceTextFadeOutDuration);
+
         current = next;
 
         if (current.IsComplete && autoSendAtMaxWords)
         {
             Send();
-            return;
+        }
+        else
+        {
+            Refresh();
+            // Keep choices locked for the full crossfade duration.
+            SetChoiceButtonsInteractable(false);
         }
 
-        Refresh();
+        yield return FadeChoiceLabelGroups(0f, 1f, choiceTextFadeInDuration);
+
+        if (!sent)
+        {
+            RestoreChoiceButtonInteractability();
+        }
+
+        choiceTransitionInProgress = false;
+    }
+
+    private IEnumerator FadeChoiceLabelGroups(float from, float to, float duration)
+    {
+        if (choiceLabelGroups == null || choiceLabelGroups.Length == 0)
+        {
+            yield break;
+        }
+
+        if (duration <= 0f)
+        {
+            for (int i = 0; i < choiceLabelGroups.Length; i++)
+            {
+                if (choiceLabelGroups[i] != null)
+                {
+                    choiceLabelGroups[i].alpha = to;
+                }
+            }
+            yield break;
+        }
+
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            float alpha = Mathf.Lerp(from, to, t);
+
+            for (int i = 0; i < choiceLabelGroups.Length; i++)
+            {
+                if (choiceLabelGroups[i] != null)
+                {
+                    choiceLabelGroups[i].alpha = alpha;
+                }
+            }
+
+            yield return null;
+        }
+
+        for (int i = 0; i < choiceLabelGroups.Length; i++)
+        {
+            if (choiceLabelGroups[i] != null)
+            {
+                choiceLabelGroups[i].alpha = to;
+            }
+        }
     }
 
     public void Send()
@@ -179,6 +265,31 @@ public class MessageComposer : MonoBehaviour
                     label.text = "...";
                 }
             }
+        }
+    }
+
+    private void SetChoiceButtonsInteractable(bool value)
+    {
+        foreach (Button button in choiceButtons)
+        {
+            if (button != null)
+            {
+                button.interactable = value;
+            }
+        }
+    }
+
+    private void RestoreChoiceButtonInteractability()
+    {
+        for (int i = 0; i < choiceButtons.Length; i++)
+        {
+            Button button = choiceButtons[i];
+            if (button == null)
+            {
+                continue;
+            }
+
+            button.interactable = button.gameObject.activeSelf && current != null && current.GetChoice(i) != null;
         }
     }
 
