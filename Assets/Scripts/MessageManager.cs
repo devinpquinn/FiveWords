@@ -92,7 +92,7 @@ public class MessageManager : MonoBehaviour
             return;
         }
 
-        SoundManager.PlaySound("PhoneShutdown", 0.5f);
+        SoundManager.PlaySound("PhoneLock", 0.5f);
 
         StartCoroutine(RestartSceneRoutine());
     }
@@ -128,6 +128,8 @@ public class MessageManager : MonoBehaviour
 
     private IEnumerator FadeInOnStartRoutine()
     {
+        SoundManager.PlaySound("PhoneUnlock", 0.5f);
+    
         fadeScreen.gameObject.SetActive(true);
         fadeScreen.alpha = 1f;
         fadeScreen.blocksRaycasts = true;
