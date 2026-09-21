@@ -29,6 +29,7 @@ public class MessageManager : MonoBehaviour
     public Button restartButton;
     public CanvasGroup fadeScreen;
     public float startFadeDuration = 0.5f;
+    public float startFadeHoldDuration = 0.5f;
     public float restartFadeDuration = 0.5f;
     public float restartFadeHoldDuration = 1f;
     public Ease fadeEase = Ease.InOutCubic;
@@ -128,6 +129,8 @@ public class MessageManager : MonoBehaviour
 
     private IEnumerator FadeInOnStartRoutine()
     {
+        yield return new WaitForSeconds(startFadeHoldDuration);
+    
         SoundManager.PlaySound("PhoneUnlock", 0.5f);
     
         fadeScreen.gameObject.SetActive(true);
