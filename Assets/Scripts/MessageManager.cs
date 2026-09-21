@@ -132,6 +132,8 @@ public class MessageManager : MonoBehaviour
         yield return new WaitForSeconds(startFadeHoldDuration);
     
         SoundManager.PlaySound("PhoneUnlock", 0.5f);
+        
+        yield return new WaitForSeconds(0.1f);
     
         fadeScreen.gameObject.SetActive(true);
         fadeScreen.alpha = 1f;
