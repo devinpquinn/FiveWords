@@ -189,7 +189,13 @@ public class MessageComposer : MonoBehaviour
 
         sendButton.interactable = false;
 
-        messageManager.AddOutgoingMessage(current.MessageText);
+        string outgoingText = current.MessageText;
+        if (outgoingText != null && outgoingText.Length < 2)
+        {
+            outgoingText += "...";
+        }
+
+        messageManager.AddOutgoingMessage(outgoingText);
 
         if (current.Response.Count == 0)
         {
