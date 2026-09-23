@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MessageComposer : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class MessageComposer : MonoBehaviour
     private bool choiceTransitionInProgress;
     private TextMeshProUGUI[] choiceLabels;
     private CanvasGroup[] choiceLabelGroups;
+    private MessageNode[] displayedChoices;
 
     void OnEnable()
     {
@@ -48,6 +50,7 @@ public class MessageComposer : MonoBehaviour
     {
         choiceLabels = new TextMeshProUGUI[choiceButtons.Length];
         choiceLabelGroups = new CanvasGroup[choiceButtons.Length];
+        displayedChoices = new MessageNode[choiceButtons.Length];
 
         for (int i = 0; i < choiceButtons.Length; i++)
         {
@@ -77,10 +80,12 @@ public class MessageComposer : MonoBehaviour
         if (sent || current == null || choiceTransitionInProgress)
             return;
 
-        MessageNode next = current.GetChoice(index);
+        MessageNode next = (displayedChoices != null && index >= 0 && index < displayedChoices.Length)
+            ? displayedChoices[index]
+            : null;
         if (next == null)
         {
-            Debug.LogWarning($"Missing choice {index + 1} on node '{current.PathId}'.", current);
+            Debug.LogWarning($"Missing displayed choice at button index {index + 1} on node '{current.PathId}'.", current);
             return;
         }
 
@@ -237,17 +242,39 @@ public class MessageComposer : MonoBehaviour
             sendButton.interactable = false;
         }
 
+        List<MessageNode> availableChoices = new List<MessageNode>(MessageNode.ChoiceCount);
+        for (int i = 0; i < MessageNode.ChoiceCount; i++)
+        {
+            MessageNode choice = current.GetChoice(i);
+            if (choice != null)
+            {
+                availableChoices.Add(choice);
+            }
+        }
+
+        for (int i = availableChoices.Count - 1; i > 0; i--)
+        {
+            int swapIndex = Random.Range(0, i + 1);
+            MessageNode temp = availableChoices[i];
+            availableChoices[i] = availableChoices[swapIndex];
+            availableChoices[swapIndex] = temp;
+        }
+
         for (int i = 0; i < choiceButtons.Length; i++)
         {
             Button button = choiceButtons[i];
             if (button == null)
                 continue;
 
-            MessageNode choice = current.GetChoice(i);
+            MessageNode choice = i < availableChoices.Count ? availableChoices[i] : null;
+            displayedChoices[i] = choice;
             button.gameObject.SetActive(choice != null);
 
             if (choice == null)
+            {
+                button.interactable = false;
                 continue;
+            }
 
             button.interactable = true;
             TextMeshProUGUI label = button.GetComponentInChildren<TextMeshProUGUI>(true);
@@ -295,7 +322,11 @@ public class MessageComposer : MonoBehaviour
                 continue;
             }
 
-            button.interactable = button.gameObject.activeSelf && current != null && current.GetChoice(i) != null;
+            button.interactable = button.gameObject.activeSelf
+                && displayedChoices != null
+                && i >= 0
+                && i < displayedChoices.Length
+                && displayedChoices[i] != null;
         }
     }
 
