@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-1-1-2-3
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: whimsical
   parent: {fileID: 11400000, guid: 8545308fd312daf4295bba87958df4b3, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - Manic pixie dream ass
+  - Willy wonka ass
+  - I honestly dont think im looking for more whimsy rn
+  - This is already as whimsical as I care to get
