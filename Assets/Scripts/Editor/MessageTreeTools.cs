@@ -165,6 +165,36 @@ public static class MessageTreeTools
         Debug.Log($"Imported message tree: {updated} nodes updated, {unmatched} rows with unknown paths.");
     }
 
+    [MenuItem("Five Words/Message Tree/Report Completion")]
+    public static void ReportCompletion()
+    {
+        MessageNode root = LoadRootOrWarn();
+        if (root == null)
+            return;
+
+        int total = 0;
+        int complete = 0;
+
+        foreach (MessageNode node in Walk(root))
+        {
+            if (node == null || node.IsRoot)
+                continue;
+
+            total++;
+            if (HasFullWordPath(node) && HasNonEmptyResponse(node))
+            {
+                complete++;
+            }
+        }
+
+        float percent = total > 0 ? (complete * 100f) / total : 0f;
+        Debug.Log(
+            $"Message completion:\n" +
+            $"  complete: {complete}/{total}\n" +
+            $"  percent: {percent:0.##}%",
+            root);
+    }
+
     private static void Build(MessageNode node, ref int created)
     {
         if (node.Depth >= MessageNode.MaxWords)
@@ -211,6 +241,34 @@ public static class MessageTreeTools
                 yield return descendant;
             }
         }
+    }
+
+    private static bool HasFullWordPath(MessageNode node)
+    {
+        if (node == null || node.IsRoot)
+            return false;
+
+        for (MessageNode current = node; current != null && !current.IsRoot; current = current.Parent)
+        {
+            if (string.IsNullOrWhiteSpace(current.Word))
+                return false;
+        }
+
+        return true;
+    }
+
+    private static bool HasNonEmptyResponse(MessageNode node)
+    {
+        if (node == null || node.Response == null || node.Response.Count == 0)
+            return false;
+
+        for (int i = 0; i < node.Response.Count; i++)
+        {
+            if (!string.IsNullOrWhiteSpace(node.Response[i]))
+                return true;
+        }
+
+        return false;
     }
 
     private static int CountNodes(MessageNode root)
