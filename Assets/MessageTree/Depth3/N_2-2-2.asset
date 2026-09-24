@@ -18,5 +18,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9d5f26534be721d4cbb908cac8638100, type: 2}
   - {fileID: 11400000, guid: 92e38cb4c9fea3348afd36fface12812, type: 2}
   - {fileID: 11400000, guid: 4463c9c8042022648a87b605c940daf4, type: 2}
-  endPunctuation: .
   response: []
