@@ -18,4 +18,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4da163a2b551b5c43a09878bcbc18a66, type: 2}
   - {fileID: 11400000, guid: 3cf743c57366f324ea3091933c71a0b0, type: 2}
   - {fileID: 11400000, guid: 1f22cda1250b99c488d52288b58f1401, type: 2}
-  response: []
+  response:
+  - That all you got?

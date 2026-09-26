@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-1-2-1-1
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: constant
   parent: {fileID: 11400000, guid: cc90cb5ef5fe79e42b0647e37d0fb5a2, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - Did you get that from like Pinterest
+  - Sorry
+  - That's sweet
+  - Life is crazy but have other constants. I just keep going back and forth on you
+  - So sure. Let's try making it simple

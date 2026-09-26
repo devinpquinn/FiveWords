@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-1-2-1-3
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: minion
   parent: {fileID: 11400000, guid: cc90cb5ef5fe79e42b0647e37d0fb5a2, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - Lol
+  - Doing all my nefarious little deeds myself IS getting exhausting
+  - Or do you mean like the little yellow guys
+  - Banana

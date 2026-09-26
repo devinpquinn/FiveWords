@@ -18,4 +18,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dc00db7a4aa0b6e4d86043a88828eb80, type: 2}
   - {fileID: 11400000, guid: 8545308fd312daf4295bba87958df4b3, type: 2}
   - {fileID: 11400000, guid: 2588f9a2d5048a243a36e078f67b57fa, type: 2}
-  response: []
+  response:
+  - '?'
+  - Did you get hit by a bus?
