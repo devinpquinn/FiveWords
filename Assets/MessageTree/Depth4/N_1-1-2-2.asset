@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-1-2-2
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: less
   parent: {fileID: 11400000, guid: 5b89f9972d58aed4e808664f2dcaf418, type: 2}
   choices:
   - {fileID: 11400000, guid: d1e58532b75bb39438ace35fbe17c2cd, type: 2}
   - {fileID: 11400000, guid: 30b3039c6d5f1894e9bd2b0478c3c734, type: 2}
   - {fileID: 11400000, guid: e40f56735d2c65648894e18fae633dce, type: 2}
-  endPunctuation: .
-  response: []
+  response:
+  - Well you currently are less
+  - You were supposed to convince me you could be more

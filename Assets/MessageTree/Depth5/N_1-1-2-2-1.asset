@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-1-2-2-1
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: stupid
   parent: {fileID: 11400000, guid: f4b82797f4226ab45a2f175752278896, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - That would be a great start yeah
+  - But I'm the one who messaged you so whose really the stupid one
+  - '*Who''s'
+  - Fuck
+  - Let's try and meet in the middle

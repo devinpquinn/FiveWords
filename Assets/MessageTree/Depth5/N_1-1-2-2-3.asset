@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-1-2-2-3
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: sarcastic
   parent: {fileID: 11400000, guid: f4b82797f4226ab45a2f175752278896, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - No dont do that I love your sarcasm
+  - Can you tell if im being sarcastic?
