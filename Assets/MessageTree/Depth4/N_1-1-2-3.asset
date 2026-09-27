@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-1-2-3
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: more
   parent: {fileID: 11400000, guid: 5b89f9972d58aed4e808664f2dcaf418, type: 2}
   choices:
   - {fileID: 11400000, guid: 304c6c18958e6a6408710908e699d36b, type: 2}
   - {fileID: 11400000, guid: 145ac87f47c17ca48b11e6aa33aa9833, type: 2}
   - {fileID: 11400000, guid: 1fe810a02429f8e4ca20377ba43d8877, type: 2}
-  endPunctuation: .
-  response: []
+  response:
+  - Okay
+  - More what though?
+  - That's what im on the fence about
+  - I fear it might be too much
