@@ -308,8 +308,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 874}
-  m_SizeDelta: {x: -100, y: 252}
+  m_AnchoredPosition: {x: 0, y: 2874}
+  m_SizeDelta: {x: -100, y: 4252}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &177213573
 MonoBehaviour:
@@ -2101,6 +2101,7 @@ MonoBehaviour:
   restartButton: {fileID: 593879174}
   fadeScreen: {fileID: 2128949218}
   startFadeDuration: 0.1
+  startFadeHoldDuration: 0.5
   restartFadeDuration: 0.1
   restartFadeHoldDuration: 1
   fadeEase: 10
@@ -2147,6 +2148,8 @@ MonoBehaviour:
   draftLabel: {fileID: 1741929883}
   placeholderText: {fileID: 818156876}
   autoSendAtMaxWords: 1
+  choiceTextFadeOutDuration: 0.08
+  choiceTextFadeInDuration: 0.12
 --- !u!1 &1592361805
 GameObject:
   m_ObjectHideFlags: 0
