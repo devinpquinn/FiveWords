@@ -21,6 +21,8 @@ public class MessageManager : MonoBehaviour
     public float crossfadeDuration = 0.25f;
     public float defaultMessageHeight = 164f;
     public float slideDuration = 0.1f;
+    [Tooltip("Slide distance used when a message is exactly the default one-line height.")]
+    public float oneLineSlideBuffer = 20f;
     public Ease slideEase = Ease.OutCubic;
     public float delayBetweenMessages = 0.5f;
 
@@ -377,8 +379,14 @@ public class MessageManager : MonoBehaviour
 
         container.DOKill(true);
 
+        float slideDistance = messageRect.rect.height - defaultHeight;
+        if (Mathf.Approximately(slideDistance, 0f))
+        {
+            slideDistance = oneLineSlideBuffer;
+        }
+
         float restingBottom = container.offsetMin.y;
-        container.offsetMin = new Vector2(container.offsetMin.x, restingBottom - (messageRect.rect.height - defaultHeight));
+        container.offsetMin = new Vector2(container.offsetMin.x, restingBottom - slideDistance);
 
         containerSlideTween = DOTween.To(
                 () => container.offsetMin.y,
