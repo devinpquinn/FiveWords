@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-1-3-1-1
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: darnedest
   parent: {fileID: 11400000, guid: ef54df9fc0612ef47aae81d0e9cd404a, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - What in tarnation
+  - Darned if i dont darned if i do
+  - Give me your darndest then
