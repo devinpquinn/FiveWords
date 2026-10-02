@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-1-3-2-3
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: cooking
   parent: {fileID: 11400000, guid: ba2275c08af9c6e4b83ae693aecb601a, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - No need for threats
+  - I'll just back away slowly
