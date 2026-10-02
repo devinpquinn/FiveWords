@@ -2094,7 +2094,7 @@ MonoBehaviour:
   crossfadeDuration: 0.1
   defaultMessageHeight: 164
   slideDuration: 0.2
-  oneLineSlideBuffer: 20
+  oneLineSlideBuffer: 0
   slideEase: 21
   delayBetweenMessages: 1
   inputAreaBackground: {fileID: 2040553481}
