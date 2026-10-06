@@ -18,4 +18,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5a4ea8b705340fa4d8d8e9f4c6bcb21c, type: 2}
   - {fileID: 11400000, guid: e9a4a76edf5f95c428d557b394171d29, type: 2}
   - {fileID: 11400000, guid: 9d463efbf5fd19749be05e4200b5c8b3, type: 2}
-  response: []
+  response:
+  - It's not a trickshot

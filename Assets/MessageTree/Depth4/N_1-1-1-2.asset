@@ -18,4 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a5d1289ee1f15a44ba852dabec9d8bf, type: 2}
   - {fileID: 11400000, guid: 1d33aceb88468204c98a23b8dd07a9cc, type: 2}
   - {fileID: 11400000, guid: 29de97f2ed7c59f43995d66289e834f6, type: 2}
-  response: []
+  response:
+  - Victor Frankenstein?
+  - Is that you?
+  - Frankenstein's monster was actually the name of the doctor
