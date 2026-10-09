@@ -174,6 +174,7 @@ public static class MessageTreeTools
 
         int total = 0;
         int complete = 0;
+        List<string> missingResponses = new List<string>();
 
         foreach (MessageNode node in Walk(root))
         {
@@ -181,9 +182,15 @@ public static class MessageTreeTools
                 continue;
 
             total++;
-            if (HasFullWordPath(node) && HasNonEmptyResponse(node))
+            bool hasResponse = HasNonEmptyResponse(node);
+            if (HasFullWordPath(node) && hasResponse)
             {
                 complete++;
+            }
+
+            if (!string.IsNullOrWhiteSpace(node.Word) && !hasResponse)
+            {
+                missingResponses.Add($"{node.PathId}: {node.MessageText}");
             }
         }
 
@@ -192,6 +199,11 @@ public static class MessageTreeTools
             $"Message completion:\n" +
             $"  complete: {complete}/{total}\n" +
             $"  percent: {percent:0.##}%",
+            root);
+
+        Debug.Log(
+            $"Nodes with a word but no response: {missingResponses.Count}\n" +
+            string.Join("\n", missingResponses),
             root);
     }
 
