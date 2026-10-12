@@ -18,4 +18,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c273d5557ece094db64b17f01cba5ba, type: 2}
   - {fileID: 11400000, guid: b5f75f1798f775f4f9b8724131177202, type: 2}
   - {fileID: 11400000, guid: e66bd8e6cb80721499f9a61a0646b8ac, type: 2}
-  response: []
+  response:
+  - '?'
+  - You sure don't think you
