@@ -324,8 +324,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
   m_Padding:
-    m_Left: 28
-    m_Right: 28
+    m_Left: 0
+    m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 7
@@ -4049,7 +4049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3831321292168315867, guid: 52ed87d895f4dc04f872cb8200b9d191, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 924
+      value: 980
       objectReference: {fileID: 0}
     - target: {fileID: 3831321292168315867, guid: 52ed87d895f4dc04f872cb8200b9d191, type: 3}
       propertyPath: m_SizeDelta.y
@@ -4117,7 +4117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6987649435092374973, guid: 52ed87d895f4dc04f872cb8200b9d191, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6987649435092374973, guid: 52ed87d895f4dc04f872cb8200b9d191, type: 3}
       propertyPath: m_AnchoredPosition.y
