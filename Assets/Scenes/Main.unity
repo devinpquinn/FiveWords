@@ -2092,9 +2092,9 @@ MonoBehaviour:
   minTypingDuration: 2
   maxTypingDuration: 5
   crossfadeDuration: 0.1
-  defaultMessageHeight: 164
+  defaultMessageHeight: 144
   slideDuration: 0.2
-  oneLineSlideBuffer: -20.5
+  oneLineSlideBuffer: 0
   slideEase: 21
   delayBetweenMessages: 1
   inputAreaBackground: {fileID: 2040553481}
