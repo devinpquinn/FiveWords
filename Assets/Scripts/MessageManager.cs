@@ -24,6 +24,7 @@ public class MessageManager : MonoBehaviour
     [Tooltip("Slide distance used when a message is exactly the default one-line height.")]
     public float oneLineSlideBuffer = 20f;
     public Ease slideEase = Ease.OutCubic;
+    public Ease bubbleOffsetEase = Ease.OutCubic;
     public float delayBetweenMessages = 0.5f;
 
     public RectTransform inputAreaBackground;
@@ -327,6 +328,15 @@ public class MessageManager : MonoBehaviour
         }
         
         SlideIn(instance.GetComponent<RectTransform>(), outgoing ? 0f : defaultMessageHeight);
+
+        if (!outgoing && instance.transform.childCount > 0)
+        {
+            RectTransform bubble = instance.transform.GetChild(0) as RectTransform;
+            if (bubble != null)
+            {
+                bubble.DOAnchorPosX(0f, crossfadeDuration).SetEase(bubbleOffsetEase);
+            }
+        }
 
         yield return CrossfadeRoutine(indicatorGroup, messageGroup);
 
