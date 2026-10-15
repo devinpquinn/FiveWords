@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-2-1-1-1
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: forget
   parent: {fileID: 11400000, guid: 3eb7c0a71e4ded74ca5238fb29791c70, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  response: []
+  response:
+  - I've been trying to
+  - Failing obviously. Here I am
+  - I guess I don't really want to either

@@ -12,11 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-2-1-3-3
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: trouble
   parent: {fileID: 11400000, guid: 02715269d726614449b04cd7207e5ea6, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - That's good pardner. Keep those hands where I can see em. No sudden movements
+  - HEY! What did I say?
+  - BLAM BLAM BLAM
+  - You made me do this! You made me!
+  - I told you! All you had to do was listen!
+  - No trouble... I didn't want... you did this...
+  - Oh god...
+  - BLAM
+  - That one was just poor trigger discipline that's on me
+  - BLAM
+  - I don't like leaving the magazine on an odd number. I might have OCD lowkey
+  - This went pretty much how I expected
