@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-2-2-3-2
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: matters
   parent: {fileID: 11400000, guid: e664288ec02041249af9e757f2f9d2a4, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - You know what? You're right. The why doesn't matter
+  - The second I sent that text I knew I was toast
