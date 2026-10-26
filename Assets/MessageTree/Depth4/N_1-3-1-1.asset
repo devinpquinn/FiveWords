@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-3-1-1
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: worst
   parent: {fileID: 11400000, guid: f4075c1446803694182bd5723860a345, type: 2}
   choices:
   - {fileID: 11400000, guid: f291eb19d735a3f4f897704c9ebb54be, type: 2}
   - {fileID: 11400000, guid: 99b90217fa9e9b74c98cb43de30b4edc, type: 2}
   - {fileID: 11400000, guid: 3ba6a240ed088d749bd009181f45b1c4, type: 2}
-  endPunctuation: .
-  response: []
+  response:
+  - I'm trying to think of a way you mean that poetically
+  - LIke I'm drawn to the worst aspects of myself I see reflected in you? Maybe?
+  - In reality I know you just drooled on your keyboard
+  - Amazing effort

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-3-1-1-2
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: mistake
   parent: {fileID: 11400000, guid: 0a2176bfbdfa68645ad34dfb8cf844c0, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - Nope I think you come in just behind the time I tried to remove my braces
