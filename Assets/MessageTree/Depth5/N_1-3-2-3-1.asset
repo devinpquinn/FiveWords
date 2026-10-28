@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-3-2-3-1
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: stupid
   parent: {fileID: 11400000, guid: df7114007815fa24a93b0da7d866404b, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - Are you sure? This could be a really good chance to be fucking stupid
+  - Well let me know if you turn out to be fucking stupid

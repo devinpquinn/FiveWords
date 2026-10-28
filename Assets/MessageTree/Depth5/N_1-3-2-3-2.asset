@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-3-2-3-2
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: you
   parent: {fileID: 11400000, guid: df7114007815fa24a93b0da7d866404b, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - LOL you think I'm that transparent
+  - Uh lemme be clear
+  - Sorry I'm obama when I'm nervous
+  - That wasn't where my head was. But I think I get the message
+  - Loud and... clear
