@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-3-3-1-2
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: worry
   parent: {fileID: 11400000, guid: 8a0e254fe7c70f748a9d4c26f4a13fe6, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - Oh brother
+  - What does that even mean I'm scared
+  - I was worried you were going to give a wack or hurtful answer how about that
+  - Cryptic and concerning was not on my radar. That's my oversight

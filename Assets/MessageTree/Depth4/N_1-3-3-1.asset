@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-3-3-1
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: you
   parent: {fileID: 11400000, guid: 8155e9442519ab540b82518c2bd9bbde, type: 2}
   choices:
   - {fileID: 11400000, guid: e28cb979fd0ec0c45a59e1107ab635b7, type: 2}
   - {fileID: 11400000, guid: f2b26dd01e983d447a7d284ccd8820b0, type: 2}
   - {fileID: 11400000, guid: 54a76cc87573560438889c41c5e0e8da, type: 2}
-  endPunctuation: .
-  response: []
+  response:
+  - Ooh almost
