@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-3-3-3
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: is
   parent: {fileID: 11400000, guid: 8155e9442519ab540b82518c2bd9bbde, type: 2}
   choices:
   - {fileID: 11400000, guid: f2f782da84c53c74e92f81cee60f89b9, type: 2}
   - {fileID: 11400000, guid: f35f8c6888c62474682875bd93225d47, type: 2}
   - {fileID: 11400000, guid: fabf89d7cc9ee3f4a8aba8424e27e153, type: 2}
-  endPunctuation: .
-  response: []
+  response:
+  - That would sound pretty grandiose if I didn't know how to process language at
+    all

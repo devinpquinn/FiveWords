@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-3-3-3-1
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: left
   parent: {fileID: 11400000, guid: d13dbbde0aa9004448e9d73c5e5c53ca, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - Ah the ol last person on earth technique
+  - Never fails
+  - Except this time
