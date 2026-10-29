@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-2-3-3-2
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: secrets
   parent: {fileID: 11400000, guid: 5370426b41038fd48988fd79d51c497e, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - That's like the "for sale baby shoes never worn" of being sus
+  - Of course you do. Everyone does
+  - Except for me. I'm a totally open book
+  - All right then. Keep your nonexistent secrets

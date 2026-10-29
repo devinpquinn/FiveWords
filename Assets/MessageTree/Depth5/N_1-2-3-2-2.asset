@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-2-3-2-2
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: catch
   parent: {fileID: 11400000, guid: 4539a22b796ca2d43b32a104d86e645b, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - How naive am I for wanting to believe that
+  - Everybody has a catch. For example my ass is too juicy
+  - You know who else said they didn't have a catch? The trojan horse
+  - Think about it

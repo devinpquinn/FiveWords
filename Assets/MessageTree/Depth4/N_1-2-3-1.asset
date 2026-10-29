@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-2-3-1
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: to
   parent: {fileID: 11400000, guid: b22de24d10013f346a32f29b8036568b, type: 2}
   choices:
   - {fileID: 11400000, guid: 407322f4e8fb7b246af0a04d5d79f9ad, type: 2}
   - {fileID: 11400000, guid: 401469ebe65f9bc43927fd4e4e57d84b, type: 2}
   - {fileID: 11400000, guid: 27fc547f65efac94f913c186abfb160a, type: 2}
-  endPunctuation: .
-  response: []
+  response:
+  - Congratulations you've done it
+  - You've smashed the code and broken the chains of my nefarious riddle
+  - You're safe now. Fly free little bird

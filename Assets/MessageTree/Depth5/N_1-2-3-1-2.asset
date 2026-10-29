@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-2-3-1-2
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: win
   parent: {fileID: 11400000, guid: 82e7a3f8fd66e524ba9d5a66dced9ab7, type: 2}
   choices:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  endPunctuation: .
-  response: []
+  response:
+  - That's true historically you seem to have no problem being a loser
+  - Yikes that felt mean. It was mean! I'm feeling mean!

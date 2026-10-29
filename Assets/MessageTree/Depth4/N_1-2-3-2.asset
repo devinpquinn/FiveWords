@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698bfddd042264740b675686f223d9da, type: 3}
   m_Name: N_1-2-3-2
   m_EditorClassIdentifier: Assembly-CSharp::MessageNode
-  word: 
+  word: a
   parent: {fileID: 11400000, guid: b22de24d10013f346a32f29b8036568b, type: 2}
   choices:
   - {fileID: 11400000, guid: 74d4bd3395b25744e8739f6b5f4e01bd, type: 2}
   - {fileID: 11400000, guid: 147591de034dce544ba1a5858eb3645d, type: 2}
   - {fileID: 11400000, guid: 630e80221b3f3a34dbc4865e6a8d9f73, type: 2}
-  endPunctuation: .
-  response: []
+  response:
+  - You don't have a... fifth word?
+  - You have failed me for the last time. *Kills you with my mind*
